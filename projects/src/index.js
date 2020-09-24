@@ -71,8 +71,9 @@ function reduce(array, fn, initial) {
     }
   } else {
     store = array[0];
-    for (let i = 0; i < array.length - 1; i++) {
-      store = fn(store, array[i + 1], i, array);
+
+    for (let i = 1; i < array.length; i++) {
+      store = fn(store, array[i], i, array);
     }
   }
 
